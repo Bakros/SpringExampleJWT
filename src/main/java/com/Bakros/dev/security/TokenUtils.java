@@ -39,8 +39,6 @@ public class TokenUtils {
 
     /**
      * DEPRECADO
-     * @param token
-     * @return
      */
     public static UsernamePasswordAuthenticationToken getAuthentication(String token){
         try {
