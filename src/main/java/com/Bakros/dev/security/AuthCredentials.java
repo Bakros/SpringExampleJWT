@@ -1,7 +1,12 @@
 package com.Bakros.dev.security;
 
-/*
-
+/**
+ * Clase que permite mappear el body:
+ * {
+ *     "email":"emi@test.cl",
+ *     "password":"admin"
+ * }
+ * A una clase. Solo es usado en JWTAuthenticationFilter.
  */
 public class AuthCredentials {
 

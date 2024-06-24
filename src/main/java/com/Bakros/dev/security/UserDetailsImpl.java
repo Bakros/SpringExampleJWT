@@ -7,6 +7,17 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Collections;
 
+/**
+ * https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/core/userdetails/UserDetails.html
+ * Provides core user information.
+ * Implementations are not used directly by Spring Security for security purposes. They simply store user
+ * information which is later encapsulated into Authentication objects. This allows non-security related user
+ * information (such as email addresses, telephone numbers etc) to be stored in a convenient location.
+ *
+ * Concrete implementations must take particular care to ensure the non-null contract detailed for each
+ * method is enforced. See User for a reference implementation (which you might like to extend or use in
+ * your code).
+ */
 public class UserDetailsImpl implements UserDetails {
     private final User user;
 

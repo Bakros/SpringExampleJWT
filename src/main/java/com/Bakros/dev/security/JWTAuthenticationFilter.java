@@ -21,6 +21,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         AuthCredentials authCredentials = new AuthCredentials();
 
         try {
+            //Mapea el body de la request al objeto authCredentials.
             authCredentials = new ObjectMapper().readValue(request.getReader(), AuthCredentials.class);
         } catch (IOException e) {
             throw new RuntimeException(e);

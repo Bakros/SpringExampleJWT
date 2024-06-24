@@ -8,6 +8,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+/**
+ * Servicio que a través del Repositorio rescata los datos de un usuario y genera una instancia de
+ * UserDetailsImpl.
+ */
+
 @Service
 public class UserDetailServiceImpl implements UserDetailsService {
     @Autowired

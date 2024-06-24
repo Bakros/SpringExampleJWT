@@ -42,16 +42,18 @@ public class TokenUtils {
      */
     public static UsernamePasswordAuthenticationToken getAuthentication(String token){
         try {
-            Claims claims = Jwts.parser()
+            Claims claims = Jwts.parserBuilder()
                     .setSigningKey(ACCESS_TOKEN_SECRET.getBytes())
                     .build()
-                    .parseClaimsJwt(token)
+                    .parseClaimsJws(token)
                     .getBody();
 
             String email = claims.getSubject();
 
             return new UsernamePasswordAuthenticationToken(email, null, Collections.emptyList());
         } catch (JwtException e){
+            System.out.println(e.toString());
+            e.printStackTrace();
             return null;
         }
     }
