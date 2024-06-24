@@ -22,6 +22,6 @@ public class UserDetailServiceImpl implements UserDetailsService {
         User user = userRepository.findOneByEmail(email).
                 orElseThrow(()-> new UsernameNotFoundException("El usuario con "+email+" no existe."));
 
-        return
+        return new UserDetailsImpl(user);
     }
 }

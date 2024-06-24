@@ -15,18 +15,19 @@ public class UserDetailsImpl implements UserDetails {
     }
 
     @Override
+    // Esto sirve para asignar roles.
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.emptyList();
     }
 
     @Override
     public String getPassword() {
-        return user.get.;
+        return user.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return null;
+        return user.getEmail();
     }
 
     @Override
@@ -47,5 +48,9 @@ public class UserDetailsImpl implements UserDetails {
     @Override
     public boolean isEnabled() {
         return UserDetails.super.isEnabled();
+    }
+
+    public String getNombre(){
+        return user.getName();
     }
 }

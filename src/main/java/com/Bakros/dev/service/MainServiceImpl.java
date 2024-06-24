@@ -23,8 +23,8 @@ public class MainServiceImpl implements MainService {
     public List<User> saveDefaultUsers(){
         List<User> userList = new ArrayList();
 
-        userList.add(userRepository.save(new User("Seba","seba@test.cl")));
-        userList.add(userRepository.save(new User("Emi","emi@test.cl")));
+        userList.add(userRepository.save(new User("Seba","seba@test.cl","$2a$10$QFQgf4J5KmbhaUSVSIhdCuaEE5PMXPmqf0J4PFHRA8i6qIfseR87u")));
+        userList.add(userRepository.save(new User("Emi","emi@test.cl","$2a$10$QFQgf4J5KmbhaUSVSIhdCuaEE5PMXPmqf0J4PFHRA8i6qIfseR87u")));
 
         return userList;
     }
