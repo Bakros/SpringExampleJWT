@@ -9,6 +9,17 @@ import com.Bakros.dev.service.MainServiceImpl;
 
 import java.util.List;
 
+
+//localhost:8080/contactos/
+//localhost:8080/login
+
+/*
+Request in login
+{
+    "email":"emi@test.cl",
+    "password":"admin"
+}
+*/
 @SpringBootApplication
 public class ExampleJwtApplication {
 
