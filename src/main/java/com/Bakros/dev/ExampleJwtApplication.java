@@ -42,6 +42,9 @@ public class ExampleJwtApplication {
 			System.out.println(contact.toString());
 		}
 
+
+
+
 	}
 
 }

@@ -17,11 +17,12 @@ import java.io.IOException;
 
 @Component
 public class JWTAuthorizationFilter extends OncePerRequestFilter {
+
     @Override
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
-
+        System.out.println("Calling from JWTAuthorizationFilter.doFilterInterna()l");
         String bearerToken = request.getHeader("Authorization");
 
         System.out.println("bearerToken "+ bearerToken);

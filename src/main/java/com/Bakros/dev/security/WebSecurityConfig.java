@@ -1,5 +1,6 @@
 package com.Bakros.dev.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -20,6 +21,7 @@ public class WebSecurityConfig {
     private final UserDetailsService userDetailsService;
     private final JWTAuthorizationFilter jwtAuthorizationFilter;
 
+    @Autowired
     public WebSecurityConfig(UserDetailsService userDetailsService, JWTAuthorizationFilter jwtAuthorizationFilter) {
         this.userDetailsService = userDetailsService;
         this.jwtAuthorizationFilter = jwtAuthorizationFilter;
@@ -32,7 +34,7 @@ public class WebSecurityConfig {
         jwtAuthenticationFilter.setAuthenticationManager(authManager);
         jwtAuthenticationFilter.setFilterProcessesUrl("/login");
 
-        return http
+        SecurityFilterChain securityFilterChain = http
                 .csrf().disable()
                 .authorizeHttpRequests()
                 .anyRequest()
@@ -46,6 +48,8 @@ public class WebSecurityConfig {
                 .addFilter(jwtAuthenticationFilter)
                 .addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
+
+        return securityFilterChain;
     }
 
 
@@ -73,7 +77,6 @@ public class WebSecurityConfig {
     AuthenticationManager authManager(HttpSecurity http, PasswordEncoder passwordEncoder) throws Exception {
         return http
                 .getSharedObject(AuthenticationManagerBuilder.class)
-                //.userDetailsService(userDetailsService())
                 .userDetailsService(userDetailsService)
                 .passwordEncoder(passwordEncoder())
                 .and()
