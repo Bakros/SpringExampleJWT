@@ -49,7 +49,9 @@
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 
-		<!-- Three dependecies for io.jsonwebtoken -->
+		<!-- Three dependecies for io.jsonwebtoken v 0.12.5 -->
+		<!-- Fueron comentadas porque la versión 0.12.5 no posee el método buildParser y genera problemas
+		 La versión 0.11.5 no -->
 		<!--
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
