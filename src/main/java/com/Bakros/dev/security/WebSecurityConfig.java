@@ -71,7 +71,7 @@ public class WebSecurityConfig {
 
 
     /*
-    NO TENGO IDEA PARA QUE ES ESTO....aún. Sin esto y sin la entrada como parametro de este objeto, el tema funciona igual.
+    NO TENGO IDEA PARA QUE ES ESTO....aún.
      */
     @Bean
     AuthenticationManager authManager(HttpSecurity http, PasswordEncoder passwordEncoder) throws Exception {
@@ -83,6 +83,8 @@ public class WebSecurityConfig {
                 .build();
     }
 
+
+    // Code to encrypt a String using BCrypt.
     public static void main(String[] args) {
         System.out.println(new BCryptPasswordEncoder().encode("admin"));
     }

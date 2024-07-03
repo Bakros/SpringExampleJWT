@@ -15,9 +15,7 @@ public class TokenUtils {
     private final static Long ACCESS_TOKEN_VALIDITY_SECONDS = 2_592_000L;
 
     public static String createToken(String nombre, String email){
-        System.out.println("Calling from TokenUtils.createToken");
-
-        System.out.println("createToken");
+        System.out.println("Calling from TokenUtils.createToken()");
 
         long expirationTime = ACCESS_TOKEN_VALIDITY_SECONDS * 1_000;
         Date experirationDate = new Date(System.currentTimeMillis() + expirationTime);
